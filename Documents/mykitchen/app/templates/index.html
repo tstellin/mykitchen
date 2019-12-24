@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Hello, {{ user.username }}!</h1>
+    {% for inventory in inventorys %}
+    <div><p>You have {{ inventory.quantity }} {{ inventory.quantity_type }} of {{ inventory.item.name }}.</p></div>
+    {% endfor %}
+{% endblock %}
