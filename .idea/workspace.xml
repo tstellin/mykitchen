@@ -1,38 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff779d37-ca9c-424b-9cbd-5c4582368033" name="Default Changelist" comment="asdaf">
-      <change afterPath="$PROJECT_DIR$/app/templates/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/500.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/versions/67997ed6901a_.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Flask_Login-0.4.1.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Flask_Login-0.4.1.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Flask_Login-0.4.1.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Flask_Login-0.4.1.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Flask_Login-0.4.1.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Flask_Login-0.4.1.dist-info/version_info.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/flask_login/__about__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/flask_login/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/flask_login/_compat.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/flask_login/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/flask_login/login_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/flask_login/mixins.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/flask_login/signals.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/flask_login/utils.py" afterDir="false" />
+    <list default="true" id="ff779d37-ca9c-424b-9cbd-5c4582368033" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/templates/ingredients.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/_inventory.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/_inventory_item.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/_inventory_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/_inventory_item.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mykitchen.py" beforeDir="false" afterPath="$PROJECT_DIR$/mykitchen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/67997ed6901a_.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,8 +109,16 @@
       <option name="presentableId" value="Default" />
       <updated>1577189792629</updated>
       <workItem from="1577189798960" duration="5390000" />
-      <workItem from="1577276977418" duration="27037000" />
+      <workItem from="1577276977418" duration="30649000" />
     </task>
+    <task id="LOCAL-00001" summary="asdaf">
+      <created>1577323511683</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1577323511683</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,26 +129,34 @@
     <option name="LAST_COMMIT_MESSAGE" value="asdaf" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1577297684248">
+    <state x="2505" y="170" key="CommitChangelistDialog2" timestamp="1577323509949">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577297684248" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1577297684247">
+    <state x="2505" y="170" key="CommitChangelistDialog2/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577323509949" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1577325743344">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.center/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577297684247" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1577297684247">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577325743344" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1577325743344">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.left/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577297684247" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1577297684247">
+    <state width="1877" height="281" key="GridCell.Tab.0.center/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577325743344" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1577325743344">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.right/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577297684247" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577325743344" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1577325743344">
+      <screen x="1920" y="57" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="281" key="GridCell.Tab.0.right/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577325743344" />
     <state x="2054" y="232" key="SettingsEditor" timestamp="1577279323653">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
     <state x="2054" y="232" key="SettingsEditor/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577279323653" />
+    <state x="2472" y="309" key="Vcs.Push.Dialog.v2" timestamp="1577323514540">
+      <screen x="1920" y="57" width="1920" height="1040" />
+    </state>
+    <state x="2472" y="309" key="Vcs.Push.Dialog.v2/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577323514540" />
     <state x="2575" y="399" key="com.intellij.ide.util.TipDialog" timestamp="1577277034171">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
@@ -170,6 +164,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/mykitchen$mykitchen.coverage" NAME="mykitchen Coverage Results" MODIFIED="1577280327964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/mykitchen$Unittests_in_test_py.coverage" NAME="Unittests in test.py Coverage Results" MODIFIED="1577297684235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mykitchen$Unittests_in_test_py.coverage" NAME="Unittests in test.py Coverage Results" MODIFIED="1577324908515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

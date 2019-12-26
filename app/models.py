@@ -21,7 +21,8 @@ class User(UserMixin, db.Model):
         return check_password_hash(self.password_hash, password)
 
     def ingredient_in_inventory(self, ingredient_id):
-        return Inventory.query.filter(Inventory.ingredient_id == ingredient_id and Inventory.user_ud == self.id).first()
+        return Inventory.query.filter_by(ingredient_id=ingredient_id,
+                                         user_id=self.id).first()
 
     def add_inventory(self, ingredient_id, quantity):
         ingredient = self.ingredient_in_inventory(ingredient_id)
@@ -50,8 +51,11 @@ class Inventory(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), index=True, primary_key=True)
     quantity = db.Column(db.Float)
 
+    ingredient = db.relationship('Ingredient', backref='inventories')
+
     def __repr__(self):
         return '<ingredient_id {}>, user_id {}, quantity {}'.format(self.ingredient_id, self.user_id, self.quantity)
+
 
 class Recipe(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -68,9 +72,12 @@ class Recipe(db.Model):
 
 
 class Ingredient(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, index=True, primary_key=True)
     name = db.Column(db.String(140), index=True)
     quantity_type = db.Column(db.String(140))
+    # Calories, other nut facts, etc
+
+    inventory = db.relationship("Inventory")
 
 @login.user_loader
 def load_user(id):

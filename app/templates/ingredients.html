@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>My Inventory</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.ingredient_name.label }}<br>
+            {{ form.ingredient_name }}<br>
+            {% for error in form.ingredient_name.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.quantity_type.label }}
+            {{ form.quantity_type() }}<br>
+            {% for error in form.quantity_type.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    <h2>Current Ingredients In Database</h2>
+    {% for ingredient in ingredients %}
+        {{ ingredient.name + ' (' + ingredient.quantity_type + ')' }}<br>
+    {% endfor %}
+    {% if prev_url %}
+    <a href="{{ prev_url }}">Newer posts</a>
+    {% endif %}
+    {% if next_url %}
+    <a href="{{ next_url }}">Older posts</a>
+    {% endif %}
+{% endblock %}

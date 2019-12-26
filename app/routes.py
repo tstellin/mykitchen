@@ -2,10 +2,11 @@ from flask import render_template, flash, redirect, url_for, request
 from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.urls import url_parse
 from app import app, db
-from app.forms import LoginForm, RegistrationForm, InventoryForm
+from app.forms import LoginForm, RegistrationForm, InventoryForm, AddIngredientForm
 from app.models import User, Ingredient, Inventory
 
 import logging
+
 
 @app.route('/')
 @app.route('/index')
@@ -68,7 +69,8 @@ def register():
 @login_required
 def inventory():
     form = InventoryForm()
-    form.ingredient_name.choices = [(str(ing.id), ing.name) for ing in Ingredient.query.order_by('name')]
+    form.ingredient_name.choices = [(str(ing.id), ing.name + ' (' + ing.quantity_type + ')') \
+                                    for ing in Ingredient.query.order_by('name')]
     if form.validate_on_submit():
         current_user.add_inventory(ingredient_id=form.ingredient_name.data, quantity=form.quantity.data)
         flash('Your inventory has been changed!')
@@ -76,10 +78,30 @@ def inventory():
 
     page = request.args.get('page', 1, type=int)
     inventories = current_user.inventories.paginate(page, app.config['POSTS_PER_PAGE'], False)
-    print(dir(inventories))
-    logging.info(inventories)
     next_url = url_for('inventory', page=inventories.next_num) if inventories.has_next else None
     prev_url = url_for('inventory', page=inventories.prev_num) if inventories.has_prev else None
 
     return render_template('inventory.html', title='Inventory', form=form, inventories=inventories.items,
+                           next_url=next_url, prev_url=prev_url)
+
+
+@app.route('/ingredients', methods=['GET', 'POST'])
+@login_required
+def ingredients():
+    form = AddIngredientForm()
+    if form.validate_on_submit():
+        ingredient = Ingredient(name=form.ingredient_name.data, quantity_type=form.quantity_type.data)
+        if Ingredient.query.filter_by(name=ingredient.name).first():
+            flash('Ingredient already exists.')
+        else:
+            db.session.add(ingredient)
+            db.session.commit()
+            flash('New ingredient added!')
+
+    page = request.args.get('page', 1, type=int)
+    ingredients = Ingredient.query.paginate(page, app.config['POSTS_PER_PAGE'], False)
+    next_url = url_for('inventory', page=ingredients.next_num) if ingredients.has_next else None
+    prev_url = url_for('inventory', page=ingredients.prev_num) if ingredients.has_prev else None
+
+    return render_template('ingredients.html', title='Ingredients', form=form, ingredients=ingredients.items,
                            next_url=next_url, prev_url=prev_url)

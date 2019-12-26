@@ -37,3 +37,12 @@ class InventoryForm(FlaskForm):
     change_type = RadioField(validators=[DataRequired()], choices=[('1', 'Add'), ('-1', 'Remove')])
     quantity = DecimalField('Quantity', validators=[DataRequired()])
     submit = SubmitField('Submit')
+
+
+class AddIngredientForm(FlaskForm):
+    ingredient_name = StringField('Ingredient Name', validators=[DataRequired()])
+    quantity_type = StringField('Quantity Type', validators=[DataRequired()])
+    submit = SubmitField('Submit')
+
+
+# Edit ingredient form
