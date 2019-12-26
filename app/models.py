@@ -1,6 +1,9 @@
 from werkzeug.security import generate_password_hash, check_password_hash
 from app import db, login
 from flask_login import UserMixin
+from time import time
+import jwt
+from app import app
 
 recipe_ingredients = db.Table('ingredients',
                               db.Column('recipe_id', db.Integer, db.ForeignKey('recipe.id')),
@@ -35,12 +38,24 @@ class User(UserMixin, db.Model):
         db.session.commit()
 
     def remove_inventory(self, ingredient_id, quantity):
-        ingredient = self.ingredient_in_inventory((ingredient_id))
+        ingredient = self.ingredient_in_inventory(ingredient_id)
         if ingredient:
             ingredient.quantity -= quantity
             if ingredient.quantity < 0:
                 ingredient.quantity = 0
         db.session.commit()
+
+    def get_reset_password_token(self, expires_in=600):
+        return jwt.encode({'reset_password': self.id, 'exp': time() + expires_in}, app.config['SECRET_KEY'],
+                          algorithm='HS256').decode('utf-8')
+
+    @staticmethod
+    def verify_reset_password_token(token):
+        try:
+            id = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])['reset_password']
+        except:
+            return
+        return User.query.get(id)
 
     def __repr__(self):
         return '<User {}>'.format(self.username)

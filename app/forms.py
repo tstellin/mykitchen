@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, SelectField, RadioField, DecimalField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, SelectField, RadioField, FloatField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
 from app.models import User, Ingredient
 
@@ -35,7 +35,7 @@ class RegistrationForm(FlaskForm):
 class InventoryForm(FlaskForm):
     ingredient_name = SelectField('Ingredient', validators=[DataRequired()])
     change_type = RadioField(validators=[DataRequired()], choices=[('1', 'Add'), ('-1', 'Remove')])
-    quantity = DecimalField('Quantity', validators=[DataRequired()])
+    quantity = FloatField('Quantity', validators=[DataRequired()])
     submit = SubmitField('Submit')
 
 
@@ -46,3 +46,13 @@ class AddIngredientForm(FlaskForm):
 
 
 # Edit ingredient form
+
+class ResetPasswordRequestForm(FlaskForm):
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    submit = SubmitField('Request Password Reset')
+
+
+class ResetPasswordForm(FlaskForm):
+    password = PasswordField('Password', validators=[DataRequired()])
+    password2 = PasswordField('Repeat Password', validators=[DataRequired(), EqualTo('password')])
+    submit = SubmitField('Request Password Reset')

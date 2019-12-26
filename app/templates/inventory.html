@@ -8,9 +8,9 @@
             {{ wtf.quick_form(form) }}
         </div>
     </div>
-    <h2>Current Ingredients In Database</h2>
-    {% for ingredient in ingredients %}
-        {{ ingredient.name + ' (' + ingredient.quantity_type + ')' }}<br>
+    <h2>Current Items In Inventory</h2>
+    {% for inventory in inventories %}
+        {% include "_inventory_item.html" %}
     {% endfor %}
     {% if prev_url %}
     <a href="{{ prev_url }}">Newer posts</a>
