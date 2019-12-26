@@ -1,17 +1,22 @@
 <html>
     <head>
-        {%  if title %}
-            <title>{{  title }} - My Kitchen</title>
-        {%  else %}
-            <title>Welcome to My Kitchen!</title>
+        {% if title %}
+        <title>{{ title }} - Microblog</title>
+        {% else %}
+        <title>Welcome to My Kitchen</title>
         {% endif %}
     </head>
     <body>
-    <div>My Kitchen:
-        <a href="/index">Home</a>
-        <a href="/login">Login</a>
-    </div>
-    <hr>
+        <div>
+            My Kitchen:
+            <a href="{{ url_for('index') }}">Home</a>
+            {% if current_user.is_anonymous %}
+            <a href="{{ url_for('login') }}">Login</a>
+            {% else %}
+            <a href="{{ url_for('logout') }}">Logout</a>
+            {% endif %}
+        </div>
+        <hr>
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         <ul>
@@ -21,6 +26,6 @@
         </ul>
         {% endif %}
         {% endwith %}
-    {% block content %}{% endblock %}
-    </body>
+        {% block content %}{% endblock %}
+  </body>
 </html>
