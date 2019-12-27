@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff779d37-ca9c-424b-9cbd-5c4582368033" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/templates/ingredients.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/_inventory_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/_inventory_item.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/67997ed6901a_.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +101,7 @@
       <option name="presentableId" value="Default" />
       <updated>1577189792629</updated>
       <workItem from="1577189798960" duration="5390000" />
-      <workItem from="1577276977418" duration="30649000" />
+      <workItem from="1577276977418" duration="30718000" />
     </task>
     <task id="LOCAL-00001" summary="asdaf">
       <created>1577323511683</created>
@@ -118,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577323511683</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Ingredients working">
+      <created>1577328379652</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1577328379652</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,13 +125,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="asdaf" />
-    <option name="LAST_COMMIT_MESSAGE" value="asdaf" />
+    <MESSAGE value="Ingredients working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ingredients working" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2505" y="170" key="CommitChangelistDialog2" timestamp="1577323509949">
+    <state x="2472" y="234" key="#Notifications" timestamp="1577488224506">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
-    <state x="2505" y="170" key="CommitChangelistDialog2/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577323509949" />
+    <state x="2472" y="234" key="#Notifications/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577488224506" />
+    <state x="2505" y="170" key="CommitChangelistDialog2" timestamp="1577328378683">
+      <screen x="1920" y="57" width="1920" height="1040" />
+    </state>
+    <state x="2505" y="170" key="CommitChangelistDialog2/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577328378683" />
     <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1577325743344">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
@@ -153,14 +157,18 @@
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
     <state x="2054" y="232" key="SettingsEditor/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577279323653" />
-    <state x="2472" y="309" key="Vcs.Push.Dialog.v2" timestamp="1577323514540">
+    <state x="2472" y="309" key="Vcs.Push.Dialog.v2" timestamp="1577328381652">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
-    <state x="2472" y="309" key="Vcs.Push.Dialog.v2/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577323514540" />
+    <state x="2472" y="309" key="Vcs.Push.Dialog.v2/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577328381652" />
     <state x="2575" y="399" key="com.intellij.ide.util.TipDialog" timestamp="1577277034171">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
     <state x="2575" y="399" key="com.intellij.ide.util.TipDialog/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577277034171" />
+    <state x="2618" y="367" key="git4idea.merge.GitPullDialog" timestamp="1577488202012">
+      <screen x="1920" y="57" width="1920" height="1040" />
+    </state>
+    <state x="2618" y="367" key="git4idea.merge.GitPullDialog/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577488202012" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/mykitchen$mykitchen.coverage" NAME="mykitchen Coverage Results" MODIFIED="1577280327964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
