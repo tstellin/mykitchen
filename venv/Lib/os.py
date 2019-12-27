@@ -221,7 +221,7 @@ def makedirs(name, mode=0o777, exist_ok=False):
         mkdir(name, mode)
     except OSError:
         # Cannot rely on checking for EEXIST, since the operating system
-        # could give priority to other errors like EACCES or EROFS
+        # could give priority to other templates like EACCES or EROFS
         if not exist_ok or not path.isdir(name):
             raise
 
@@ -305,7 +305,7 @@ def walk(top, topdown=True, onerror=None, followlinks=False):
     the value of topdown, the list of subdirectories is retrieved before the
     tuples for the directory and its subdirectories are generated.
 
-    By default errors from the os.scandir() call are ignored.  If
+    By default templates from the os.scandir() call are ignored.  If
     optional arg 'onerror' is specified, it should be a function; it
     will be called with one argument, an OSError instance.  It can
     report the error to continue with the walk, or raise the exception

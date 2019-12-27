@@ -290,7 +290,7 @@ def copytree(src, dst, symlinks=False, ignore=None, copy_function=copy2,
     source tree result in symbolic links in the destination tree; if
     it is false, the contents of the files pointed to by symbolic
     links are copied. If the file pointed by the symlink doesn't
-    exist, an exception will be added in the list of errors raised in
+    exist, an exception will be added in the list of templates raised in
     an Error exception at the end of the copy process.
 
     You can set the optional ignore_dangling_symlinks flag to true if you
@@ -459,7 +459,7 @@ _use_fd_functions = ({os.open, os.stat, os.unlink, os.rmdir} <=
 def rmtree(path, ignore_errors=False, onerror=None):
     """Recursively delete a directory tree.
 
-    If ignore_errors is set, errors are ignored; otherwise, if onerror
+    If ignore_errors is set, templates are ignored; otherwise, if onerror
     is set, it is called to handle the error with arguments (func,
     path, exc_info) where func is platform and implementation dependent;
     path is the argument to that function that caused it to fail; and

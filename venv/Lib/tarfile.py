@@ -274,7 +274,7 @@ class TarError(Exception):
     """Base exception."""
     pass
 class ExtractError(TarError):
-    """General exception for extract errors."""
+    """General exception for extract templates."""
     pass
 class ReadError(TarError):
     """Exception for unreadable tar archives."""
@@ -286,7 +286,7 @@ class StreamError(TarError):
     """Exception for unsupported operations on stream-like TarFiles."""
     pass
 class HeaderError(TarError):
-    """Base exception for header errors."""
+    """Base exception for header templates."""
     pass
 class EmptyHeaderError(HeaderError):
     """Exception for empty headers."""
@@ -1396,8 +1396,8 @@ class TarFile(object):
     ignore_zeros = False        # If true, skips empty or invalid blocks and
                                 # continues processing.
 
-    errorlevel = 1              # If 0, fatal errors only appear in debug
-                                # messages (if debug >= 0). If > 0, errors
+    errorlevel = 1              # If 0, fatal templates only appear in debug
+                                # messages (if debug >= 0). If > 0, templates
                                 # are passed to the caller as exceptions.
 
     format = DEFAULT_FORMAT     # The format to use when creating an archive.

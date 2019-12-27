@@ -1,11 +1,18 @@
 import unittest
-from app import app, db
+from app import create_app, db
 from app.models import User, Ingredient, Recipe, Inventory
+from config import Config
+#https://www.patricksoftwareblog.com/unit-testing-a-flask-application/
 
+class TestConfig(Config):
+    TESTING = True
+    SQLALCHEMY_DATABASE_URI = 'sqlite://'
 
 class UserModelCase(unittest.TestCase):
     def setUp(self):
-        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite://'
+        self.app = create_app(TestConfig)
+        self.app_context = self.app.app_context()
+        self.app_context.push()
         db.create_all()
 
         u = User(username='Test', email='Test@Example.com')
@@ -17,6 +24,7 @@ class UserModelCase(unittest.TestCase):
     def tearDown(self):
         db.session.remove()
         db.drop_all()
+        self.app_context.pop()
 
     def test_password_hashing(self):
         u = User(username='susan')

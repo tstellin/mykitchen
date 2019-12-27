@@ -7,7 +7,7 @@ Interface summary:
         x = copy.copy(y)        # make a shallow copy of y
         x = copy.deepcopy(y)    # make a deep copy of y
 
-For module specific errors, copy.Error is raised.
+For module specific templates, copy.Error is raised.
 
 The difference between shallow and deep copying is only relevant for
 compound objects (objects that contain other objects, like lists or
