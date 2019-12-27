@@ -1,8 +1,0 @@
-{% extends "base.html" %}
-
-{% block content %}
-    <h1>Hello, {{ user.username }}!</h1>
-    {% for inventory in inventories %}
-    <div>{%  include '_inventory_item.html' %}</div>
-    {% endfor %}
-{% endblock %}

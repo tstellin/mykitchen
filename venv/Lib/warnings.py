@@ -402,7 +402,7 @@ def warn_explicit(message, category, filename, lineno,
     elif action == "default":
         registry[key] = 1
     else:
-        # Unrecognized actions are errors
+        # Unrecognized actions are templates
         raise RuntimeError(
               "Unrecognized action (%r) in warnings.filters:\n %s" %
               (action, item))

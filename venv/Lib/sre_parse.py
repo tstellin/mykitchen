@@ -10,7 +10,7 @@
 
 """Internal support module for sre"""
 
-# XXX: show string offset and offending character for all errors
+# XXX: show string offset and offending character for all templates
 
 from sre_constants import *
 
