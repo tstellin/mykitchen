@@ -56,6 +56,7 @@ def reset_password(token):
         return redirect(url_for('auth.login'))
     return render_template('auth/reset_password.html', form=form)
 
+
 @bp.route('/logout')
 def logout():
     logout_user()

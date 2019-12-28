@@ -1,14 +1,25 @@
-import unittest
+from flask import Flask
 from app import create_app, db
-from app.models import User, Ingredient, Recipe, Inventory
+from app.models import User, Ingredient, Inventory
+import unittest
 from config import Config
-#https://www.patricksoftwareblog.com/unit-testing-a-flask-application/
 
 class TestConfig(Config):
     TESTING = True
+    WTF_CSRF_METHODS = []
+    WTF_CSRF_ENABLED = False
+    WTF_CSRF_CHECK_DEFAULT = False
     SQLALCHEMY_DATABASE_URI = 'sqlite://'
 
 class UserModelCase(unittest.TestCase):
+
+    def create_app(self):
+
+        app = Flask(__name__)
+        app.config['TESTING'] = True
+        return app
+
+
     def setUp(self):
         self.app = create_app(TestConfig)
         self.app_context = self.app.app_context()

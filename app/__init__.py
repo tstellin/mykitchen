@@ -70,6 +70,6 @@ def create_app(config_class=Config):
         except PermissionError:
             print('Cant do this in Pycharm for some reason')
 
-        return app
+    return app
 
 from app import  models
