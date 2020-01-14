@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <h1>My Recipes</h1>
+    <div class="row">
+        <div class="col-md-4">
+            {{ wtf.quick_form(form) }}
+        </div>
+    </div>
+    <h2>Current Recipes In Database</h2>
+    {% for recipe in recipes %}
+        {{ recipe.name }}<br>
+    {% endfor %}
+    {% if prev_url %}
+    <a href="{{ prev_url }}">Newer Recipes</a>
+    {% endif %}
+    {% if next_url %}
+    <a href="{{ next_url }}">Older Recipes</a>
+    {% endif %}
+{% endblock %}

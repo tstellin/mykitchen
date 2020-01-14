@@ -2,17 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff779d37-ca9c-424b-9cbd-5c4582368033" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/test_auth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_user_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/mykitchen.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mykitchen.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/main/ingredient_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/main/recipes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_ingredients_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_recipes_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/auth/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/auth/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sqlalchemy/dialects/sqlite/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/sqlalchemy/dialects/sqlite/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_user_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_user_model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,13 +20,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="716" />
+    <option name="myElementSize" value="290" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -53,7 +53,7 @@
       <recent name="C:\Users\Thomas\Documents\mykitchen" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in tests">
+  <component name="RunManager" selected="Python tests.Unittests in test_recipes_model.py">
     <configuration name="mykitchen" type="PythonConfigurationType" factoryName="Python">
       <module name="mykitchen" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -135,6 +135,21 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Unittests in test_recipes_model.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="mykitchen" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_recipes_model.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Unittests in tests" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="mykitchen" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -152,6 +167,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests in test_recipes_model.py" />
         <item itemvalue="Python tests.Unittests in tests" />
         <item itemvalue="Python.test_user_model" />
         <item itemvalue="Python tests.Unittests in test_auth.py" />
@@ -183,6 +199,10 @@
       <updated>1577189792629</updated>
       <workItem from="1577189798960" duration="5390000" />
       <workItem from="1577276977418" duration="30649000" />
+      <workItem from="1577570808750" duration="2348000" />
+      <workItem from="1577633813046" duration="2190000" />
+      <workItem from="1578165488399" duration="30637000" />
+      <workItem from="1578875300806" duration="6621000" />
     </task>
     <task id="LOCAL-00001" summary="asdaf">
       <created>1577323511683</created>
@@ -191,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577323511683</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added a lot of great unittests">
+      <created>1577563233260</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1577563233261</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,67 +226,79 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="asdaf" />
-    <option name="LAST_COMMIT_MESSAGE" value="asdaf" />
+    <MESSAGE value="Added a lot of great unittests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a lot of great unittests" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2599" y="193" key="#Unittests_in_test.py" timestamp="1577502504277">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
     <state x="2599" y="193" key="#Unittests_in_test.py/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577502504277" />
-    <state x="2655" y="379" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1577544229804">
+    <state x="2655" y="379" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578755919461">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
-    <state x="2655" y="379" key="#com.intellij.fileTypes.FileTypeChooser/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577544229804" />
+    <state x="2655" y="379" key="#com.intellij.fileTypes.FileTypeChooser/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1578755919461" />
     <state x="2599" y="190" key="#test" timestamp="1577502517249">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
     <state x="2599" y="190" key="#test/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577502517249" />
-    <state x="2505" y="170" key="CommitChangelistDialog2" timestamp="1577323509949">
+    <state x="585" y="113" key="CommitChangelistDialog2" timestamp="1577563232107">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="585" y="113" key="CommitChangelistDialog2/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1577563232107" />
+    <state x="2505" y="170" key="CommitChangelistDialog2/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577323509949" />
+    <state width="1877" height="300" key="GridCell.Tab.0.bottom" timestamp="1578777692205">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
-    <state x="2505" y="170" key="CommitChangelistDialog2/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577323509949" />
-    <state width="1877" height="358" key="GridCell.Tab.0.bottom" timestamp="1577563183347">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="358" key="GridCell.Tab.0.bottom/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1577563240271" />
+    <state width="1877" height="300" key="GridCell.Tab.0.bottom/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1578777692205" />
+    <state width="1877" height="300" key="GridCell.Tab.0.center" timestamp="1578777692205">
+      <screen x="1920" y="57" width="1920" height="1040" />
     </state>
-    <state width="1877" height="358" key="GridCell.Tab.0.bottom/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1577563183347" />
-    <state width="1877" height="358" key="GridCell.Tab.0.bottom/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577562740905" />
-    <state width="1877" height="358" key="GridCell.Tab.0.center" timestamp="1577563183346">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="358" key="GridCell.Tab.0.center/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1577563240271" />
+    <state width="1877" height="300" key="GridCell.Tab.0.center/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1578777692205" />
+    <state width="1877" height="300" key="GridCell.Tab.0.left" timestamp="1578777692205">
+      <screen x="1920" y="57" width="1920" height="1040" />
     </state>
-    <state width="1877" height="358" key="GridCell.Tab.0.center/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1577563183346" />
-    <state width="1877" height="358" key="GridCell.Tab.0.center/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577562740905" />
-    <state width="1877" height="358" key="GridCell.Tab.0.left" timestamp="1577563183346">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="358" key="GridCell.Tab.0.left/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1577563240271" />
+    <state width="1877" height="300" key="GridCell.Tab.0.left/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1578777692205" />
+    <state width="1877" height="300" key="GridCell.Tab.0.right" timestamp="1578777692205">
+      <screen x="1920" y="57" width="1920" height="1040" />
     </state>
-    <state width="1877" height="358" key="GridCell.Tab.0.left/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1577563183346" />
-    <state width="1877" height="358" key="GridCell.Tab.0.left/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577562740905" />
-    <state width="1877" height="358" key="GridCell.Tab.0.right" timestamp="1577563183347">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="358" key="GridCell.Tab.0.right/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1577563183347" />
-    <state width="1877" height="358" key="GridCell.Tab.0.right/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577562740905" />
+    <state width="1877" height="358" key="GridCell.Tab.0.right/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1577563240271" />
+    <state width="1877" height="300" key="GridCell.Tab.0.right/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1578777692205" />
     <state x="2054" y="232" key="SettingsEditor" timestamp="1577502566904">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
     <state x="2054" y="232" key="SettingsEditor/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577502566904" />
-    <state x="2472" y="309" key="Vcs.Push.Dialog.v2" timestamp="1577323514540">
-      <screen x="1920" y="57" width="1920" height="1040" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1577563235136">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1577563235136" />
     <state x="2472" y="309" key="Vcs.Push.Dialog.v2/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577323514540" />
-    <state x="2575" y="399" key="com.intellij.ide.util.TipDialog" timestamp="1577277034171">
+    <state x="2575" y="399" key="com.intellij.ide.util.TipDialog" timestamp="1578875305300">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
-    <state x="2575" y="399" key="com.intellij.ide.util.TipDialog/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577277034171" />
+    <state x="2575" y="399" key="com.intellij.ide.util.TipDialog/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1578875305300" />
+    <state x="2004" y="268" width="1736" height="856" key="dock-window-1" timestamp="1578774060304">
+      <screen x="1920" y="57" width="1920" height="1040" />
+    </state>
+    <state x="2004" y="268" width="1736" height="856" key="dock-window-1/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1578774060304" />
+    <state x="2577" y="182" width="606" height="789" key="find.popup" timestamp="1578197880125">
+      <screen x="1920" y="57" width="1920" height="1040" />
+    </state>
+    <state x="2577" y="182" width="606" height="789" key="find.popup/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1578197880125" />
     <state x="2543" y="282" key="search.everywhere.popup" timestamp="1577544223511">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
     <state x="2543" y="282" key="search.everywhere.popup/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577544223511" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/mykitchen$test_user_model.coverage" NAME="test_user_model Coverage Results" MODIFIED="1577560476567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/mykitchen$test_user_model.coverage" NAME="test_user_model Coverage Results" MODIFIED="1578198207770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/mykitchen$mykitchen.coverage" NAME="mykitchen Coverage Results" MODIFIED="1577280327964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/mykitchen$Unittests_in_test_py.coverage" NAME="Unittests in test_auth.py Coverage Results" MODIFIED="1577560467007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/mykitchen$Unittests_in_tests.coverage" NAME="Unittests in tests Coverage Results" MODIFIED="1577563183333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/mykitchen$Unittests_in_tests.coverage" NAME="Unittests in tests Coverage Results" MODIFIED="1578773117285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/mykitchen$Unittests_in_test_recipes_model_py.coverage" NAME="Unittests in test_recipes_model.py Coverage Results" MODIFIED="1578775052370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/mykitchen$test.coverage" NAME="test Coverage Results" MODIFIED="1577502634996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
 </project>

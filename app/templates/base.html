@@ -26,6 +26,7 @@
                     {% else %}
                     <li><a href="{{ url_for('main.inventory') }}">Inventory</a></li>
                         <li><a href="{{ url_for('main.ingredients') }}">Ingredients</a></li>
+                        <li><a href="{{  url_for('main.recipes') }}">Recipes</a></li>
                     <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
                     {% endif %}
                 </ul>

@@ -4,7 +4,7 @@ from flask_login import UserMixin
 from time import time
 import jwt
 
-recipe_ingredients = db.Table('ingredients',
+recipe_ingredients = db.Table('recipe_ingredients',
                               db.Column('recipe_id', db.Integer, db.ForeignKey('recipe.id')),
                               db.Column('ingredient_id', db.Integer, db.ForeignKey('ingredient.id')))
 
@@ -15,6 +15,7 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(120), index=True, unique=True)
     password_hash = db.Column(db.String(128))
     inventories = db.relationship('Inventory', backref='owner', lazy='dynamic')
+    recipes = db.relationship('Recipe', backref='creator', lazy='dynamic')
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
@@ -43,6 +44,28 @@ class User(UserMixin, db.Model):
             if ingredient.quantity < 0:
                 ingredient.quantity = 0
         db.session.commit()
+
+    def add_recipe(self, name, instructions, servings, ingredients):
+        total_calories = sum(ingredient.calories_per_serving for ingredient in ingredients)
+        r = Recipe(submitted_by_user_id=self.id,
+                   name=name,
+                   instructions=instructions,
+                   servings=servings,
+                   ingredients=ingredients,
+                   total_calories=total_calories,
+                   calories_per_serving=total_calories/servings
+                   )
+        db.session.add(r)
+        db.session.commit()
+
+    def delete_recipe(self, recipe_id):
+        r = self.recipes.filter_by(id=recipe_id).first()
+        db.session.delete(r)
+        db.session.commit()
+
+    def use_recipe(self, recipe_id):
+        r = self.recipes.filter_by(id=recipe_id).first().ingredients
+        print(r)
 
     def get_reset_password_token(self, expires_in=600):
         return jwt.encode({'reset_password': self.id, 'exp': time() + expires_in}, current_app.config['SECRET_KEY'],
@@ -83,9 +106,7 @@ class Recipe(db.Model):
     __table_args__ = (db.UniqueConstraint(submitted_by_user_id, name), )
 
     ingredients = db.relationship('Ingredient', secondary=recipe_ingredients,
-                                  primaryjoin=(recipe_ingredients.c.recipe_id == id),
-                                  secondaryjoin=(recipe_ingredients.c.ingredient_id == id),
-                                  backref=db.backref('recipes', lazy='dynamic'), lazy='dynamic')
+                                  backref=db.backref('recipe', lazy='dynamic'), lazy='dynamic')
 
 
 class Ingredient(db.Model):
@@ -93,10 +114,10 @@ class Ingredient(db.Model):
     submitted_by_user_id = db.Column(db.Integer, db.ForeignKey('user.id'), index=True)
     name = db.Column(db.String(140), index=True)
     quantity_type = db.Column(db.String(140))
-    calories_per_serving = db.Column(db.Integer)
-    # Calories, other nut facts, etc
+    calories_per_serving = db.Column(db.Integer, nullable=False)
 
     inventory = db.relationship("Inventory")
+
 
 @login.user_loader
 def load_user(id):

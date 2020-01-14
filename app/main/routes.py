@@ -1,8 +1,8 @@
 from flask import render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_required
 from app import current_app, db
-from app.main.forms import InventoryForm, AddIngredientForm
-from app.models import Ingredient
+from app.main.forms import InventoryForm, AddIngredientForm, AddRecipeForm, AmountForm
+from app.models import Ingredient, Recipe
 from app.main import bp
 
 
@@ -40,7 +40,9 @@ def inventory():
 def ingredients():
     form = AddIngredientForm()
     if form.validate_on_submit():
-        ingredient = Ingredient(name=form.ingredient_name.data, quantity_type=form.quantity_type.data)
+        ingredient = Ingredient(name=form.ingredient_name.data,
+                                quantity_type=form.quantity_type.data,
+                                calories_per_serving=form.calories_per_serving.data)
         if Ingredient.query.filter_by(name=ingredient.name).first():
             flash('Ingredient already exists.')
         else:
@@ -55,3 +57,33 @@ def ingredients():
 
     return render_template('main/ingredients.html', title='Ingredients', form=form, ingredients=ingredients.items,
                            next_url=next_url, prev_url=prev_url)
+
+
+@bp.route('/recipes', methods=['GET', 'POST'])
+@login_required
+def recipes():
+    form = AddRecipeForm()
+    ingredients = Ingredient.query.all()
+    form.ingredients.choices = [(i.id, i.name) for i in ingredients]
+    if form.validate_on_submit():
+        r = Recipe(name=form.name.data,
+                   instructions=form.instructions.data,
+                   servings=form.servings.data)
+        ings = Ingredient.query.filter(id in form.ingredients.data).all()
+        for ing in ings:
+            r.ingredients.append(ing)
+        db.session.add(r)
+        db.session.commit()
+        recipe_id = Recipe.query.filter_by(name=form.name.data).first().id
+        return redirect(url_for('main.ingredient_detail', recipe_id=recipe_id))
+    return render_template('main/recipes.html', title='Recipes', form=form)
+
+
+@bp.route('/ingredient_detail', methods=['GET', 'POST'])
+@login_required
+def ingredient_detail():
+    form = AmountForm()
+    recipe_id = request.args.get('recipe_id')
+    r = Recipe.query.filter_by(id=recipe_id).first()
+
+    return render_template('main/ingredient_detail.html', form=form)
