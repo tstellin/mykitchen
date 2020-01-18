@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, SelectField, RadioField, FloatField, TextAreaField, IntegerField, SelectMultipleField
+from wtforms import StringField, SubmitField, SelectField, RadioField, FloatField, TextAreaField,\
+    IntegerField, SelectMultipleField, FieldList
 from wtforms.validators import DataRequired
 
 
@@ -26,7 +27,7 @@ class AddRecipeForm(FlaskForm):
 
 
 class AmountForm(FlaskForm):
-    amount = FloatField('Amount')
+    amounts = FieldList(FloatField('Amount', [DataRequired()]))
     submit = SubmitField('Submit')
 
 

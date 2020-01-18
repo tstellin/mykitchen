@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff779d37-ca9c-424b-9cbd-5c4582368033" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/templates/main/ingredient_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/main/recipes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_ingredients_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_recipes_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/main/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/main/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_user_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_user_model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,6 +196,7 @@
       <workItem from="1577633813046" duration="2190000" />
       <workItem from="1578165488399" duration="30637000" />
       <workItem from="1578875300806" duration="6621000" />
+      <workItem from="1579225520089" duration="12548000" />
     </task>
     <task id="LOCAL-00001" summary="asdaf">
       <created>1577323511683</created>
@@ -242,11 +236,11 @@
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
     <state x="2599" y="190" key="#test/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577502517249" />
-    <state x="585" y="113" key="CommitChangelistDialog2" timestamp="1577563232107">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2505" y="170" key="CommitChangelistDialog2" timestamp="1578970649364">
+      <screen x="1920" y="57" width="1920" height="1040" />
     </state>
     <state x="585" y="113" key="CommitChangelistDialog2/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1577563232107" />
-    <state x="2505" y="170" key="CommitChangelistDialog2/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577323509949" />
+    <state x="2505" y="170" key="CommitChangelistDialog2/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1578970649364" />
     <state width="1877" height="300" key="GridCell.Tab.0.bottom" timestamp="1578777692205">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
@@ -276,10 +270,10 @@
     </state>
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1577563235136" />
     <state x="2472" y="309" key="Vcs.Push.Dialog.v2/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577323514540" />
-    <state x="2575" y="399" key="com.intellij.ide.util.TipDialog" timestamp="1578875305300">
+    <state x="2575" y="399" key="com.intellij.ide.util.TipDialog" timestamp="1579225525949">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
-    <state x="2575" y="399" key="com.intellij.ide.util.TipDialog/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1578875305300" />
+    <state x="2575" y="399" key="com.intellij.ide.util.TipDialog/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1579225525949" />
     <state x="2004" y="268" width="1736" height="856" key="dock-window-1" timestamp="1578774060304">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>

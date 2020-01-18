@@ -4,7 +4,7 @@ from app import current_app, db
 from app.main.forms import InventoryForm, AddIngredientForm, AddRecipeForm, AmountForm
 from app.models import Ingredient, Recipe
 from app.main import bp
-
+from wtforms import FloatField
 
 @bp.route('/')
 @bp.route('/index')
@@ -69,7 +69,7 @@ def recipes():
         r = Recipe(name=form.name.data,
                    instructions=form.instructions.data,
                    servings=form.servings.data)
-        ings = Ingredient.query.filter(id in form.ingredients.data).all()
+        ings = Ingredient.query.filter(Ingredient.id.in_(form.ingredients.data)).all()
         for ing in ings:
             r.ingredients.append(ing)
         db.session.add(r)
@@ -82,8 +82,11 @@ def recipes():
 @bp.route('/ingredient_detail', methods=['GET', 'POST'])
 @login_required
 def ingredient_detail():
-    form = AmountForm()
     recipe_id = request.args.get('recipe_id')
     r = Recipe.query.filter_by(id=recipe_id).first()
+    form = AmountForm()
+    ingredients = [dict(zip(["id", "name"], ing)) for ing in r.ingredients.all()]
+    for ingredient in ingredients:
+        form.amounts.append_entry(ingredient)
 
     return render_template('main/ingredient_detail.html', form=form)
