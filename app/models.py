@@ -6,7 +6,8 @@ import jwt
 
 recipe_ingredients = db.Table('recipe_ingredients',
                               db.Column('recipe_id', db.Integer, db.ForeignKey('recipe.id')),
-                              db.Column('ingredient_id', db.Integer, db.ForeignKey('ingredient.id')))
+                              db.Column('ingredient_id', db.Integer, db.ForeignKey('ingredient.id')),
+                              db.Column('amount', db.Integer))
 
 
 class User(UserMixin, db.Model):
@@ -65,7 +66,6 @@ class User(UserMixin, db.Model):
 
     def use_recipe(self, recipe_id):
         r = self.recipes.filter_by(id=recipe_id).first().ingredients
-        print(r)
 
     def get_reset_password_token(self, expires_in=600):
         return jwt.encode({'reset_password': self.id, 'exp': time() + expires_in}, current_app.config['SECRET_KEY'],

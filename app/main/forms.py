@@ -18,16 +18,13 @@ class AddIngredientForm(FlaskForm):
     submit = SubmitField('Submit')
 
 
+class RecipeIngredientForm(FlaskForm):
+    submit = SubmitField('Submit')
+
+
 class AddRecipeForm(FlaskForm):
     name = StringField('Recipe Name', validators=[DataRequired()])
     instructions = TextAreaField('Instructions', validators=[DataRequired()])
     servings = IntegerField('Servings', validators=[DataRequired()])
     ingredients = SelectMultipleField('Ingredients', coerce=int)
     submit = SubmitField('Submit')
-
-
-class AmountForm(FlaskForm):
-    amounts = FieldList(FloatField('Amount', [DataRequired()]))
-    submit = SubmitField('Submit')
-
-

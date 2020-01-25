@@ -6,6 +6,7 @@
       <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/main/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/main/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +35,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -196,7 +198,8 @@
       <workItem from="1577633813046" duration="2190000" />
       <workItem from="1578165488399" duration="30637000" />
       <workItem from="1578875300806" duration="6621000" />
-      <workItem from="1579225520089" duration="12548000" />
+      <workItem from="1579225520089" duration="18710000" />
+      <workItem from="1579960029143" duration="8070000" />
     </task>
     <task id="LOCAL-00001" summary="asdaf">
       <created>1577323511683</created>
@@ -212,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577563233261</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added a lot of great unittests">
+      <created>1579375413722</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1579375413722</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,11 +246,11 @@
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
     <state x="2599" y="190" key="#test/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577502517249" />
-    <state x="2505" y="170" key="CommitChangelistDialog2" timestamp="1578970649364">
+    <state x="2505" y="170" key="CommitChangelistDialog2" timestamp="1579375411273">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
     <state x="585" y="113" key="CommitChangelistDialog2/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1577563232107" />
-    <state x="2505" y="170" key="CommitChangelistDialog2/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1578970649364" />
+    <state x="2505" y="170" key="CommitChangelistDialog2/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1579375411273" />
     <state width="1877" height="300" key="GridCell.Tab.0.bottom" timestamp="1578777692205">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
@@ -265,15 +275,15 @@
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
     <state x="2054" y="232" key="SettingsEditor/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577502566904" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1577563235136">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1577563235136" />
-    <state x="2472" y="309" key="Vcs.Push.Dialog.v2/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577323514540" />
-    <state x="2575" y="399" key="com.intellij.ide.util.TipDialog" timestamp="1579225525949">
+    <state x="2472" y="309" key="Vcs.Push.Dialog.v2" timestamp="1579375416949">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
-    <state x="2575" y="399" key="com.intellij.ide.util.TipDialog/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1579225525949" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1577563235136" />
+    <state x="2472" y="309" key="Vcs.Push.Dialog.v2/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1579375416949" />
+    <state x="2575" y="399" key="com.intellij.ide.util.TipDialog" timestamp="1579960030252">
+      <screen x="1920" y="57" width="1920" height="1040" />
+    </state>
+    <state x="2575" y="399" key="com.intellij.ide.util.TipDialog/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1579960030252" />
     <state x="2004" y="268" width="1736" height="856" key="dock-window-1" timestamp="1578774060304">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
@@ -282,10 +292,10 @@
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
     <state x="2577" y="182" width="606" height="789" key="find.popup/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1578197880125" />
-    <state x="2543" y="282" key="search.everywhere.popup" timestamp="1577544223511">
+    <state x="2543" y="282" width="672" height="678" key="search.everywhere.popup" timestamp="1579380378947">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
-    <state x="2543" y="282" key="search.everywhere.popup/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577544223511" />
+    <state x="2543" y="282" width="672" height="678" key="search.everywhere.popup/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1579380378947" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/mykitchen$test_user_model.coverage" NAME="test_user_model Coverage Results" MODIFIED="1578198207770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />

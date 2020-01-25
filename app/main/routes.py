@@ -1,10 +1,11 @@
 from flask import render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_required
 from app import current_app, db
-from app.main.forms import InventoryForm, AddIngredientForm, AddRecipeForm, AmountForm
+from app.main.forms import InventoryForm, AddIngredientForm, AddRecipeForm, RecipeIngredientForm
 from app.models import Ingredient, Recipe
 from app.main import bp
 from wtforms import FloatField
+from wtforms.validators import DataRequired
 
 @bp.route('/')
 @bp.route('/index')
@@ -62,11 +63,13 @@ def ingredients():
 @bp.route('/recipes', methods=['GET', 'POST'])
 @login_required
 def recipes():
+    recipes = Recipe.query.filter_by(submitted_by_user_id=current_user.id).all()
     form = AddRecipeForm()
     ingredients = Ingredient.query.all()
     form.ingredients.choices = [(i.id, i.name) for i in ingredients]
     if form.validate_on_submit():
-        r = Recipe(name=form.name.data,
+        r = Recipe(submitted_by_user_id=current_user.id,
+                   name=form.name.data,
                    instructions=form.instructions.data,
                    servings=form.servings.data)
         ings = Ingredient.query.filter(Ingredient.id.in_(form.ingredients.data)).all()
@@ -76,7 +79,7 @@ def recipes():
         db.session.commit()
         recipe_id = Recipe.query.filter_by(name=form.name.data).first().id
         return redirect(url_for('main.ingredient_detail', recipe_id=recipe_id))
-    return render_template('main/recipes.html', title='Recipes', form=form)
+    return render_template('main/recipes.html', title='Recipes', form=form, recipes=recipes)
 
 
 @bp.route('/ingredient_detail', methods=['GET', 'POST'])
@@ -84,9 +87,17 @@ def recipes():
 def ingredient_detail():
     recipe_id = request.args.get('recipe_id')
     r = Recipe.query.filter_by(id=recipe_id).first()
-    form = AmountForm()
-    ingredients = [dict(zip(["id", "name"], ing)) for ing in r.ingredients.all()]
-    for ingredient in ingredients:
-        form.amounts.append_entry(ingredient)
+    ingredients = r.ingredients.all()
 
+    for ing in ingredients:
+        setattr(RecipeIngredientForm, ing.name + '_amount',
+                FloatField(ing.name + ' Quantity', validators=[DataRequired()]))
+
+    form = RecipeIngredientForm()
+    if form.validate_on_submit():
+        for ing in ingredients:
+            r.ingredients.filter_by(id=ing.id).first().amount = getattr(form, ing.name + '_amount').data
+            db.session.commit()
+
+        return redirect(url_for('main.recipes'))
     return render_template('main/ingredient_detail.html', form=form)
