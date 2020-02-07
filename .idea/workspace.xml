@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ff779d37-ca9c-424b-9cbd-5c4582368033" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/helper_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/helper_methods.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_recipes.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_recipes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +49,7 @@
       <recent name="C:\Users\Thomas\Documents\mykitchen" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for test_recipes.MainRecipesModel.test_valid_recipe_added">
+  <component name="RunManager" selected="Python tests.Unittests in tests">
     <configuration name="mykitchen" type="PythonConfigurationType" factoryName="Python">
       <module name="mykitchen" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -145,10 +149,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests in tests" />
         <item itemvalue="Python tests.Unittests for test_recipes.MainRecipesModel.test_valid_recipe_added" />
         <item itemvalue="Python tests.Unittests for test_recipes.MainRecipesModel" />
         <item itemvalue="Python tests.Unittests for test_auth.AuthBlueprint" />
-        <item itemvalue="Python tests.Unittests in tests" />
         <item itemvalue="Python tests.Unittests in test_recipes.py" />
       </list>
     </recent_temporary>
@@ -183,7 +187,7 @@
       <workItem from="1578875300806" duration="6621000" />
       <workItem from="1579225520089" duration="18710000" />
       <workItem from="1579960029143" duration="18921000" />
-      <workItem from="1580949972994" duration="11886000" />
+      <workItem from="1580949972994" duration="15899000" />
     </task>
     <task id="LOCAL-00001" summary="asdaf">
       <created>1577323511683</created>
@@ -220,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581043388110</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Uncommented the most important thing.">
+      <created>1581043519395</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1581043519395</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,7 +242,8 @@
     <MESSAGE value="Added a lot of great unittests" />
     <MESSAGE value="Add new recipe works." />
     <MESSAGE value="Removed something from tutorial that wasnt relevant" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed something from tutorial that wasnt relevant" />
+    <MESSAGE value="Uncommented the most important thing." />
+    <option name="LAST_COMMIT_MESSAGE" value="Uncommented the most important thing." />
   </component>
   <component name="WindowStateProjectService">
     <state x="2599" y="193" key="#Unittests_in_test.py" timestamp="1577502504277">
@@ -259,39 +271,39 @@
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
     <state x="2599" y="190" key="#test/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577502517249" />
-    <state x="585" y="113" key="CommitChangelistDialog2" timestamp="1581043387035">
+    <state x="585" y="113" key="CommitChangelistDialog2" timestamp="1581043518784">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="113" key="CommitChangelistDialog2/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1581043387035" />
+    <state x="585" y="113" key="CommitChangelistDialog2/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1581043518784" />
     <state x="2505" y="170" key="CommitChangelistDialog2/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1580958207528" />
-    <state width="1877" height="331" key="GridCell.Tab.0.bottom" timestamp="1580960536863">
-      <screen x="1920" y="57" width="1920" height="1040" />
+    <state width="1877" height="331" key="GridCell.Tab.0.bottom" timestamp="1581047936554">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="358" key="GridCell.Tab.0.bottom/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1577563240271" />
+    <state width="1877" height="331" key="GridCell.Tab.0.bottom/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1581047936554" />
     <state width="1877" height="331" key="GridCell.Tab.0.bottom/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1580960536863" />
-    <state width="1877" height="331" key="GridCell.Tab.0.center" timestamp="1580960536862">
-      <screen x="1920" y="57" width="1920" height="1040" />
+    <state width="1877" height="331" key="GridCell.Tab.0.center" timestamp="1581047936554">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="358" key="GridCell.Tab.0.center/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1577563240271" />
+    <state width="1877" height="331" key="GridCell.Tab.0.center/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1581047936554" />
     <state width="1877" height="331" key="GridCell.Tab.0.center/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1580960536862" />
-    <state width="1877" height="331" key="GridCell.Tab.0.left" timestamp="1580960536862">
-      <screen x="1920" y="57" width="1920" height="1040" />
+    <state width="1877" height="331" key="GridCell.Tab.0.left" timestamp="1581047936553">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="358" key="GridCell.Tab.0.left/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1577563240271" />
+    <state width="1877" height="331" key="GridCell.Tab.0.left/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1581047936553" />
     <state width="1877" height="331" key="GridCell.Tab.0.left/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1580960536862" />
-    <state width="1877" height="331" key="GridCell.Tab.0.right" timestamp="1580960536862">
-      <screen x="1920" y="57" width="1920" height="1040" />
+    <state width="1877" height="331" key="GridCell.Tab.0.right" timestamp="1581047936554">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="358" key="GridCell.Tab.0.right/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1577563240271" />
+    <state width="1877" height="331" key="GridCell.Tab.0.right/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1581047936554" />
     <state width="1877" height="331" key="GridCell.Tab.0.right/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1580960536862" />
     <state x="2054" y="232" key="SettingsEditor" timestamp="1577502566904">
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
     <state x="2054" y="232" key="SettingsEditor/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577502566904" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1581043393177">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1581043548993">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1581043393177" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1581043548993" />
     <state x="2472" y="309" key="Vcs.Push.Dialog.v2/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1579972704629" />
     <state x="2575" y="399" key="com.intellij.ide.util.TipDialog" timestamp="1580949973750">
       <screen x="1920" y="57" width="1920" height="1040" />
@@ -313,11 +325,11 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/mykitchen$test_user_model.coverage" NAME="test_user_model Coverage Results" MODIFIED="1578198207770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/mykitchen$mykitchen.coverage" NAME="mykitchen Coverage Results" MODIFIED="1577280327964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/mykitchen$Unittests_for_test_recipes_MainRecipesModel_test_valid_recipe_added.coverage" NAME="Unittests for test_recipes.MainRecipesModel.test_valid_recipe_added Coverage Results" MODIFIED="1580959485760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/mykitchen$Unittests_for_test_recipes_MainRecipesModel_test_valid_recipe_added.coverage" NAME="Unittests for test_recipes.MainRecipesModel.test_valid_recipe_added Coverage Results" MODIFIED="1581047523798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/mykitchen$Unittests_in_test_py.coverage" NAME="Unittests in test_auth.py Coverage Results" MODIFIED="1577560467007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/mykitchen$Unittests_in_tests.coverage" NAME="Unittests in tests Coverage Results" MODIFIED="1580951019607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/mykitchen$Unittests_for_test_auth_AuthBlueprint.coverage" NAME="Unittests for test_auth.AuthBlueprint Coverage Results" MODIFIED="1580957399574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/mykitchen$Unittests_for_test_recipes_MainRecipesModel.coverage" NAME="Unittests for test_recipes.MainRecipesModel Coverage Results" MODIFIED="1580958965104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/mykitchen$Unittests_in_tests.coverage" NAME="Unittests in tests Coverage Results" MODIFIED="1581047936536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/mykitchen$Unittests_in_test_recipes_model_py.coverage" NAME="Unittests in test_recipes_model.py Coverage Results" MODIFIED="1578775052370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/mykitchen$test.coverage" NAME="test Coverage Results" MODIFIED="1577502634996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>

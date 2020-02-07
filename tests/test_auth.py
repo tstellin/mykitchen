@@ -3,6 +3,7 @@ from app.models import User
 import unittest
 from unittest import mock
 from config import Config
+from tests.helper_methods import login, register, logout
 
 #https://www.patricksoftwareblog.com/unit-testing-a-flask-application/
 
@@ -28,28 +29,8 @@ class AuthBlueprint(unittest.TestCase):
         db.drop_all()
         self.app_context.pop()
 
-    def register(self, username, email, password, password2, follow_redirects):
-        return self.app.post(
-            'auth/register',
-            data=dict(username=username, email=email, password=password, password2=password2),
-            follow_redirects=follow_redirects
-        )
-
-    def login(self, username, password, follow_redirects):
-        return self.app.post(
-            'auth/login',
-            data=dict(username=username, password=password),
-            follow_redirects=follow_redirects
-        )
-
-    def logout(self):
-        return self.app.get(
-            'auth/logout',
-            follow_redirects=False
-        )
-
     def test_logout_redirect(self):
-        response = self.logout()
+        response = logout(self.app)
         self.assertEqual('http://localhost/index', response.location)
 
     def test_main_page(self):
@@ -57,28 +38,28 @@ class AuthBlueprint(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_valid_user_registration(self):
-        response = self.register('testuser', 'patkennedy79@gmail.com', 'FlaskIsAwesome', 'FlaskIsAwesome', True)
+        response = register(self.app, 'testuser', 'patkennedy79@gmail.com', 'FlaskIsAwesome', 'FlaskIsAwesome', True)
         self.assertEqual(200, response.status_code)
         self.assertIn(b'Congratulations, you are now a registered user!', response.data)
 
     def test_valid_user_registration_redirect(self):
-        response = self.register('testuser', 'patkennedy79@gmail.com', 'FlaskIsAwesome', 'FlaskIsAwesome', False)
+        response = register(self.app, 'testuser', 'patkennedy79@gmail.com', 'FlaskIsAwesome', 'FlaskIsAwesome', False)
         self.assertEqual('http://localhost/auth/login', response.location)
 
     def test_invalid_user_registration_different_passwords(self):
-        response = self.register('testuser', 'patkennedy79@gmail.com', 'FlaskIsAwesome', 'FlaskIsNotAwesome', True)
+        response = register(self.app, 'testuser', 'patkennedy79@gmail.com', 'FlaskIsAwesome', 'FlaskIsNotAwesome', True)
         self.assertIn(b'Field must be equal to password.', response.data)
 
     def test_invalid_user_registration_duplicate_email(self):
-        response = self.register('testuser', 'patkennedy79@gmail.com', 'FlaskIsAwesome', 'FlaskIsAwesome', True)
+        response = register(self.app, 'testuser', 'patkennedy79@gmail.com', 'FlaskIsAwesome', 'FlaskIsAwesome', True)
         self.assertEqual(response.status_code, 200)
-        response = self.register('testuser1', 'patkennedy79@gmail.com', 'FlaskIsAwesome', 'FlaskIsAwesome', True)
+        response = register(self.app, 'testuser1', 'patkennedy79@gmail.com', 'FlaskIsAwesome', 'FlaskIsAwesome', True)
         self.assertIn(b'Please use a different email address.', response.data)
 
     def test_invalid_user_registration_duplicate_username(self):
-        response = self.register('testuser', 'pat@gmail.com', 'FlaskIsAwesome', 'FlaskIsAwesome', True)
+        response = register(self.app, 'testuser', 'pat@gmail.com', 'FlaskIsAwesome', 'FlaskIsAwesome', True)
         self.assertEqual(response.status_code, 200)
-        response = self.register('testuser', 'patkennedy79@gmail.com', 'FlaskIsAwesome', 'FlaskIsAwesome', True)
+        response = register(self.app, 'testuser', 'patkennedy79@gmail.com', 'FlaskIsAwesome', 'FlaskIsAwesome', True)
         self.assertIn(b'Please use a different username.', response.data)
 
     @mock.patch('flask_login.utils._get_user')
@@ -100,7 +81,7 @@ class AuthBlueprint(unittest.TestCase):
         user.set_password('abc123')
         db.session.add(user)
         db.session.commit()
-        response = self.login('tester', 'abc123', follow_redirects=False)
+        response = login(self.app, 'tester', 'abc123', follow_redirects=False)
         self.assertEqual('http://localhost/index', response.location)
 
     def test_user_login(self):
@@ -108,15 +89,15 @@ class AuthBlueprint(unittest.TestCase):
         user.set_password('abc123')
         db.session.add(user)
         db.session.commit()
-        response = self.login('tester', 'abc123', follow_redirects=True)
+        response = login(self.app, 'tester', 'abc123', follow_redirects=True)
         self.assertEqual(200, response.status_code)
-        response = self.login('invalid', 'abc123', follow_redirects=False)
+        response = login(self.app, 'invalid', 'abc123', follow_redirects=False)
         self.assertEqual('http://localhost/index', response.location)
 
     def test_user_invalid_credentials(self):
-        response = self.login('invalihhhhd', 'abc123', follow_redirects=True)
+        response = login(self.app, 'invalihhhhd', 'abc123', follow_redirects=True)
         self.assertIn(b'Invalid username or password', response.data)
-        response = self.login('tester', 'abc1234', follow_redirects=True)
+        response = login(self.app, 'tester', 'abc1234', follow_redirects=True)
         self.assertIn(b'Invalid username or password', response.data)
 
 

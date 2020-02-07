@@ -61,7 +61,7 @@ def ingredients():
 
 
 @bp.route('/recipes', methods=['GET', 'POST'])
-@login_required
+#@login_required
 def recipes():
     recipes = Recipe.query.filter_by(submitted_by_user_id=current_user.id).all()
     form = AddRecipeForm()
@@ -77,7 +77,7 @@ def recipes():
                                 ingredients=ingredients)
 
         recipe_id = Recipe.query.filter_by(name=form.name.data).first().id
-        return redirect(url_for('main/ingredient_detail', recipe_id=recipe_id))
+        return redirect(url_for('main.ingredient_detail', recipe_id=recipe_id))
 
     return render_template('main/recipes.html', title='Recipes', form=form, recipes=recipes)
 
