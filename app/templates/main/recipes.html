@@ -10,7 +10,7 @@
     </div>
     <h2>Current Recipes In Database</h2>
     {% for recipe in recipes %}
-        {{ recipe.name }}<br>
+        <a href={{ url_for('main.recipe', recipe_id=recipe.id) }}>{{ recipe.name }}</a><br>
     {% endfor %}
     {% if prev_url %}
     <a href="{{ prev_url }}">Newer Recipes</a>

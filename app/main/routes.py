@@ -67,18 +67,18 @@ def recipes():
     form = AddRecipeForm()
     ingredients = Ingredient.query.all()
     form.ingredients.choices = [(i.id, i.name) for i in ingredients]
+
     if form.validate_on_submit():
-        r = Recipe(submitted_by_user_id=current_user.id,
-                   name=form.name.data,
-                   instructions=form.instructions.data,
-                   servings=form.servings.data)
-        ings = Ingredient.query.filter(Ingredient.id.in_(form.ingredients.data)).all()
-        for ing in ings:
-            r.ingredients.append(ing)
-        db.session.add(r)
-        db.session.commit()
+        ingredients = Ingredient.query.filter(Ingredient.id.in_(form.ingredients.data)).all()
+
+        current_user.add_recipe(name=form.name.data,
+                                instructions=form.instructions.data,
+                                servings=form.servings.data,
+                                ingredients=ingredients)
+
         recipe_id = Recipe.query.filter_by(name=form.name.data).first().id
-        return redirect(url_for('main.ingredient_detail', recipe_id=recipe_id))
+        return redirect(url_for('main/ingredient_detail', recipe_id=recipe_id))
+
     return render_template('main/recipes.html', title='Recipes', form=form, recipes=recipes)
 
 
@@ -101,3 +101,10 @@ def ingredient_detail():
 
         return redirect(url_for('main.recipes'))
     return render_template('main/ingredient_detail.html', form=form)
+
+
+@bp.route('/recipe/<recipe_id>')
+def recipe(recipe_id):
+    recipe = Recipe.query.filter_by(id=recipe_id).first_or_404()
+
+    return render_template('main/recipe.html', recipe=recipe)
