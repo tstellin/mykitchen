@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff779d37-ca9c-424b-9cbd-5c4582368033" name="Default Changelist" comment="Add new recipe works.">
+    <list default="true" id="ff779d37-ca9c-424b-9cbd-5c4582368033" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +183,7 @@
       <workItem from="1578875300806" duration="6621000" />
       <workItem from="1579225520089" duration="18710000" />
       <workItem from="1579960029143" duration="18921000" />
-      <workItem from="1580949972994" duration="11743000" />
+      <workItem from="1580949972994" duration="11886000" />
     </task>
     <task id="LOCAL-00001" summary="asdaf">
       <created>1577323511683</created>
@@ -212,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579972702575</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Removed something from tutorial that wasnt relevant">
+      <created>1581043388110</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1581043388110</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,7 +230,8 @@
     <MESSAGE value="asdaf" />
     <MESSAGE value="Added a lot of great unittests" />
     <MESSAGE value="Add new recipe works." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add new recipe works." />
+    <MESSAGE value="Removed something from tutorial that wasnt relevant" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed something from tutorial that wasnt relevant" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2599" y="193" key="#Unittests_in_test.py" timestamp="1577502504277">
@@ -250,10 +259,10 @@
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
     <state x="2599" y="190" key="#test/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577502517249" />
-    <state x="2505" y="170" key="CommitChangelistDialog2" timestamp="1580958207528">
-      <screen x="1920" y="57" width="1920" height="1040" />
+    <state x="585" y="113" key="CommitChangelistDialog2" timestamp="1581043387035">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="113" key="CommitChangelistDialog2/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1577563232107" />
+    <state x="585" y="113" key="CommitChangelistDialog2/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1581043387035" />
     <state x="2505" y="170" key="CommitChangelistDialog2/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1580958207528" />
     <state width="1877" height="331" key="GridCell.Tab.0.bottom" timestamp="1580960536863">
       <screen x="1920" y="57" width="1920" height="1040" />
@@ -279,10 +288,10 @@
       <screen x="1920" y="57" width="1920" height="1040" />
     </state>
     <state x="2054" y="232" key="SettingsEditor/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1577502566904" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1581043094033">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1581043393177">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1581043094033" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/1920.57.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1581043393177" />
     <state x="2472" y="309" key="Vcs.Push.Dialog.v2/1920.57.1920.1040/0.0.1920.1040@1920.57.1920.1040" timestamp="1579972704629" />
     <state x="2575" y="399" key="com.intellij.ide.util.TipDialog" timestamp="1580949973750">
       <screen x="1920" y="57" width="1920" height="1040" />
