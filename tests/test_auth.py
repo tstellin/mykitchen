@@ -34,8 +34,11 @@ class AuthBlueprint(unittest.TestCase):
         self.assertEqual('http://localhost/index', response.location)
 
     def test_main_page(self):
-        response = self.app.get('/', follow_redirects=True)
-        self.assertEqual(response.status_code, 200)
+        with self.app as a:
+            register(self.app, 'test123', 'test123@aol.com', 'cat', 'cat', True)
+            login(a, 'test123', 'cat', True)
+            response = self.app.get('/', follow_redirects=True)
+            self.assertEqual(response.status_code, 200)
 
     def test_valid_user_registration(self):
         response = register(self.app, 'testuser', 'patkennedy79@gmail.com', 'FlaskIsAwesome', 'FlaskIsAwesome', True)

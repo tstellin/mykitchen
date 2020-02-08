@@ -10,7 +10,7 @@ from wtforms.validators import DataRequired
 @bp.route('/')
 @bp.route('/index')
 def index():
-    user = {'username': 'Thomas'}
+    user = {'username': current_user.username}
     return render_template('main/index.html', title='Home', user=user)
 
 @bp.route('/inventory', methods=['GET', 'POST'])

@@ -1,6 +1,6 @@
+from unittest import TestCase
 from app import create_app, db
-from tests.helper_methods import login, register, add_recipe
-import unittest
+from tests.helper_methods import register, login
 from config import Config
 
 
@@ -12,7 +12,7 @@ class TestConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'sqlite://'
 
 
-class MainRecipesModel(unittest.TestCase):
+class Test_Routes(TestCase):
 
     def setUp(self):
         app = create_app(TestConfig)
@@ -22,13 +22,9 @@ class MainRecipesModel(unittest.TestCase):
         db.create_all()
         register(self.app, 'test123', 'test123@aol.com', 'cat', 'cat', True)
 
-    def tearDown(self):
-        db.session.remove()
-        db.drop_all()
-        self.app_context.pop()
-
-    def test_valid_recipe_added(self):
-        with self.app:
-            login(self.app, 'test123', 'cat', True)
-            response = add_recipe(self.app, submitted_by_user_id=1, follow_redirects=True)
+    def test_index(self):
+        with self.app as a:
+            login(a, 'test123', 'cat', True)
+            response = self.app.get('index')
             self.assertEqual(200, response.status_code)
+            self.assertIn(b'Hello, test123!', response.data)

@@ -1,5 +1,6 @@
 from app.models import Ingredient
 
+
 def register(client, username, email, password, password2, follow_redirects):
     return client.post(
         'auth/register',
